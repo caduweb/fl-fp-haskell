@@ -1,15 +1,6 @@
 
 data Tree = Leaf | Node Int Tree Tree deriving Show
 
-treeDepth :: Tree -> Int
-treeDepth Leaf = 0
-treeDepth (Node _ leftSubtree rightSubtree) = 
- 1 + max (treeDepth leftSubtree) (treeDepth rightSubtree)
-
-treeSum :: Tree -> Int
-treeSum Leaf = 0
-treeSum (Node x lst rst) = x + treeSum lst + treeSum rst
-
 isSortedTree :: Tree -> Bool
 isSortedTree Leaf = True
 isSortedTree (Node _ Leaf Leaf) = True
